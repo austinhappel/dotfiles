@@ -1,2 +1,2 @@
-source ~/shell/setup-zsh.sh;
-source ~/shell/personal/osx.sh;
+source ~/dotfiles/setup-zsh.sh;
+source ~/dotfiles/personal/osx.sh;
