@@ -5,11 +5,11 @@
 
 * Add the following to your .zshrc:
 
-        source ~/shell/setup-zsh.sh;
+        source ~/dotfiles/setup-zsh.sh;
 
 * If you're on osx, also add this :
 
-        source ~/shell/osx.sh;
+        source ~/dotfiles/osx.sh;
 
 * Make sure to install the zsh-git-prompt repo:
     
@@ -20,11 +20,11 @@
 
 * Add the following to your .zshrc:
 
-    source ~/shell/setup-bash.sh;
+    source ~/dotfiles/setup-bash.sh;
 
 * If you're on osx, also add this :
 
-    source ~/shell/osx.sh;
+    source ~/dotfiles/osx.sh;
 
 ## other notes:
 
