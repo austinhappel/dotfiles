@@ -26,3 +26,12 @@
 
     source ~/shell/osx.sh;
 
+## other notes:
+
+### set zsh as default shell:
+
+    chsh -s /bin/zsh
+
+### set bash as default shell:
+
+    chsh -s /bin/bash
