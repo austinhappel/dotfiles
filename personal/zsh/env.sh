@@ -12,7 +12,7 @@ export CLICOLOR='true'
 autoload -U colors && colors
 
 # useful git info when in git repository
-source ~/shell/personal/zsh/tools/zsh-git-prompt/zshrc.sh
+source ~/dotfiles/personal/zsh/tools/zsh-git-prompt/zshrc.sh
 
 # prompt
 PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}% $(git_super_status) %# '
