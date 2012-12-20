@@ -8,5 +8,4 @@ source ~/dotfiles/personal/zsh/aliases.sh
 
 # work
 source ~/dotfiles/work/env.sh
-source ~/dotfiles/work/config.sh
 source ~/dotfiles/work/aliases.sh
