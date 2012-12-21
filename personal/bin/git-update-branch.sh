@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 # Updates current branch with latest from develop
 # 
 # @author: Marcus Melder
