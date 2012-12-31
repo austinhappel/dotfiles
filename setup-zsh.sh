@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
+
+# set dotfiles folder environment var
+export DOTFILES_DIR="$(dirname ${0})"
 
 # home
 source ~/dotfiles/personal/env.sh
