@@ -2,8 +2,10 @@
 # Updates current branch with latest from develop
 # 
 # @author: Marcus Melder
+# @author: Austin Happel
 
-SOURCE_BRANCH="master";
+SOURCE_BRANCH="master"
+
 SUCCESS=false;
 
 git_branch () {
@@ -12,14 +14,23 @@ git_branch () {
 
 update_git () {
     current_branch=$(git_branch)
+    echo "Updating [${current_branch}] branch with latest pull from [${SOURCE_BRANCH}] branch."
+    echo "Are you sure? ([y]/n)"
+    read accept
 
-    git checkout $SOURCE_BRANCH
-    git pull origin $SOURCE_BRANCH
+    if [ "$accept" = "n" ] ; then
+        echo "aborting"
+        exit;
+    else
+        git checkout $SOURCE_BRANCH
+        git pull origin $SOURCE_BRANCH
 
-    if [ "$current_branch" != $SOURCE_BRANCH ]; then 
-        git checkout $current_branch
-        git merge $SOURCE_BRANCH
+        if [ "$current_branch" != $SOURCE_BRANCH ]; then 
+            git checkout $current_branch
+            git merge $SOURCE_BRANCH
+        fi
     fi
+    exit;
 }
 
 while getopts ":s:" option
@@ -32,6 +43,11 @@ do
 done
 
 if [ $# = 0 ] ; then
+    # if no -s flag is supplied, try to glean default branch from .git/HEAD if available.
+    if [ `cat .git/HEAD | sed 's/ref\: refs\/heads\///' 2>/dev/null` ] ; then
+        SOURCE_BRANCH=`cat .git/HEAD | sed 's/ref\: refs\/heads\///'`;
+    fi
+
     update_git;
     SUCCESS=true;
 fi
