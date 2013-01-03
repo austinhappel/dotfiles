@@ -3,6 +3,9 @@
 # 
 # @author: Marcus Melder
 # @author: Austin Happel
+#
+# TODO: add a flag for selecting the remote to pull from
+# 
 
 SOURCE_BRANCH="master"
 
