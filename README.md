@@ -26,6 +26,13 @@
 
     source ~/dotfiles/personal/osx.sh;
 
+## both
+
+* soft-link the `.npmrc`
+
+        ln -s ~/dotfiles/.npmrc ~/.npmrc
+
+
 ## other notes:
 
 ### set zsh as default shell:
