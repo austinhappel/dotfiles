@@ -9,22 +9,22 @@
 
 * If you're on osx, also add this :
 
-        source ~/dotfiles/osx.sh;
+        source ~/dotfiles/personal/osx.sh;
 
 * Make sure to install the zsh-git-prompt repo:
     
-        % git submodule update --recursive
+        % git submodule init --recursive
 
 
 ## bash
 
-* Add the following to your .zshrc:
+* Add the following to your .bashrc:
 
     source ~/dotfiles/setup-bash.sh;
 
 * If you're on osx, also add this :
 
-    source ~/dotfiles/osx.sh;
+    source ~/dotfiles/personal/osx.sh;
 
 ## other notes:
 
