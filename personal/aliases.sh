@@ -5,3 +5,7 @@ alias ll='ls -la'
 alias lll='ls -alh'
 
 alias gitup='~/dotfiles/personal/bin/git-update-branch.sh';
+
+# assuming you have mysql5 server installed:
+alias mysqlstart='sudo /opt/local/bin/mysqld_safe5 &'
+alias mysqlstop='/opt/local/bin/mysqladmin5 -u root -p shutdown'
