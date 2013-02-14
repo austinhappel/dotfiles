@@ -1,3 +1,6 @@
 [submodule "personal/zsh/tools/zsh-git-prompt"]
 	path = personal/zsh/tools/zsh-git-prompt
 	url = git@github.com:austinhappel/zsh-git-prompt.git
+[submodule "personal/tools/nvm"]
+	path = personal/tools/nvm
+	url = git://github.com/creationix/nvm.git
