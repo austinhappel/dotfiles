@@ -2,5 +2,5 @@
 
 file=~/Dropbox/si-ifconfig.txt
 echo "IFCONFIG AS OF: "$(date)"\n\n" > $file
-ifconfig >> $file
+/sbin/ifconfig >> $file
 
