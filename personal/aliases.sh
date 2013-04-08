@@ -13,4 +13,4 @@ alias mysqlstop='/opt/local/bin/mysqladmin5 -u root -p shutdown'
 # assuming you have xcode installed: (works on 10.7.5)
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
-alias svnrmall=`svn rm $( svn status | sed -e '/^!/!d' -e 's/^!//' )`
+alias svnrmall='svn rm $( svn status | sed -e "/^!/!d" -e "s/^!//" )'
