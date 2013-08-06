@@ -1,0 +1,38 @@
+#!/bin/bash
+
+printf "This baby converts your folder of .wav, .ogg, and .mp3 files into all the formats needed for HTML5 audio!\n\n"
+printf "Usage: cd /folder/to/files && sh path/to/convertAudio.sh\n\n"
+printf "Defaults to 128k bitrate.\n\n"
+echo "Choose what format are your files in:"
+echo "1) wav"
+echo "2) ogg"
+echo "3) mp3"
+
+read selection
+if [[ $selection != *[!1-3]* ]]; then
+    echo ""
+else
+    echo "ERROR: Must choose an option (1-3)"
+    exit;
+fi
+
+case $selection in
+1)
+    ext1='.wav'
+    ext2='.ogg'
+    ext3='.mp3'
+    ;;
+2)
+    ext1='.ogg'
+    ext2='.mp3'
+    ext3='.wav'
+    ;;
+3)
+    ext1='.mp3'
+    ext2='.wav'
+    ext3='.ogg'
+    ;;
+esac
+
+ls | grep "$ext1" | sed s/\.[^\.]*$// | xargs -I {} ffmpeg -i {}"$ext1" -ab 128k {}"$ext2"
+ls | grep "$ext1" | sed s/\.[^\.]*$// | xargs -I {} ffmpeg -i {}"$ext1" -ab 128k {}"$ext3"
