@@ -20,7 +20,9 @@ case $selection in
 1)
     ext1='.wav'
     ext2='.ogg'
+    customFlags2='-acodec libvorbis '
     ext3='.mp3'
+    customFlags3=''
     ;;
 2)
     ext1='.ogg'
@@ -30,9 +32,11 @@ case $selection in
 3)
     ext1='.mp3'
     ext2='.wav'
+    customFlags2=''
     ext3='.ogg'
+    customFlags3='-acodec libvorbis '
     ;;
 esac
 
-ls | grep "$ext1" | sed s/\.[^\.]*$// | xargs -I {} ffmpeg -i {}"$ext1" -ab 128k {}"$ext2"
-ls | grep "$ext1" | sed s/\.[^\.]*$// | xargs -I {} ffmpeg -i {}"$ext1" -ab 128k {}"$ext3"
+ls | grep "$ext1" | sed s/\.[^\.]*$// | xargs -I {} ffmpeg -i {}"$ext1" -ab 128k $customFlags2 {}"$ext2"
+ls | grep "$ext1" | sed s/\.[^\.]*$// | xargs -I {} ffmpeg -i {}"$ext1" -ab 128k $customFlags3 {}"$ext3"
