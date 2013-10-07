@@ -22,3 +22,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # ruby: rvm
 source ~/.rvm/scripts/rvm
+
+# todo
+source ${DOTFILES_DIR}/personal/tools/todo/todo_completion
+alias todo='todo -d ${DOTFILES_DIR}/personal/tools/todo/todo.cfg'
+alias t='todo -d ${DOTFILES_DIR}/personal/tools/todo/todo.cfg'
