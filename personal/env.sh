@@ -25,5 +25,10 @@ source ~/.rvm/scripts/rvm
 
 # todo
 source ${DOTFILES_DIR}/personal/tools/todo/todo_completion
-alias todo='todo -d ${DOTFILES_DIR}/personal/tools/todo/todo.cfg'
-alias t='todo -d ${DOTFILES_DIR}/personal/tools/todo/todo.cfg'
+export TODOTXT_CFG_FILE="${DOTFILES_DIR}/personal/tools/todo/todo.cfg"
+alias t='todo'
+
+# pyenv
+export PYENV_ROOT="${DOTFILES_DIR}/personal/tools/pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

@@ -4,3 +4,6 @@
 [submodule "personal/tools/nvm"]
 	path = personal/tools/nvm
 	url = git://github.com/creationix/nvm.git
+[submodule "personal/tools/pyenv"]
+	path = personal/tools/pyenv
+	url = git://github.com/yyuu/pyenv.git
