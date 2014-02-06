@@ -1,0 +1,21 @@
+#! /bin/bash
+#
+# helper/loading dots
+function dots {
+   while : ; do
+      echo -n "."
+      sleep 1s
+   done
+}
+
+if [ "$1" = "" ]; then
+   echo "rmpycfiles: no path given."
+else
+    echo "purging .pyc files in $1";
+    dots &
+    pid=$!
+    find $1 -name '*.pyc' -exec rm {} \;
+    kill -9 $pid
+    echo "done!";
+fi
+
