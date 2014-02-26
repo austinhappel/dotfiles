@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# get IP only: filter out localhost.
+# Meant only for OSX, might work on others?
+# http://stackoverflow.com/questions/8529181/terminal-command-to-get-just-ip-address-and-nothing-else
+ifconfig "$@" | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2
