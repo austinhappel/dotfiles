@@ -14,3 +14,4 @@ alias mysqlstop='/opt/local/bin/mysqladmin5 -u root -p shutdown'
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 alias svnrmall='svn status | grep "^\!" | sed "s/! *//" | xargs -I% svn rm %'
+alias svnaddall='svn --force --depth infinity add .'
