@@ -1,0 +1,73 @@
+#/bin/bash
+
+THROTTLE=200
+PORT="any"
+LINE="--------------------------------------------------------------------------------"
+start()
+{
+    echo "Throttling data from port $PORT to $THROTTLE KByte/s"
+    
+    unit="KBytes/s"
+    throttleString=$THROTTLE$unit
+    sudo ipfw pipe 1 config bw $throttleString
+    sudo ipfw add 1 pipe 1 src-port ${PORT}
+}
+
+stop()
+{
+    echo "Stopping throttle."
+    sudo ipfw delete 1
+}
+
+status()
+{
+    pipe=`sudo ipfw list | grep 'pipe 1'`
+    if [ "$pipe" ] ; then
+        echo "Status: Active."
+        echo "$LINE"
+        echo "$pipe"
+        echo "$LINE"
+        echo ""
+        echo "Pipe details: (Hold onto your butts)"
+        echo "$LINE"
+        sudo ipfw pipe 1 show
+        echo "$LINE"
+    else
+        echo "Status: Not Active."
+    fi
+}
+
+# check if 2nd arg is a number and save as throttle speed
+if [ "$2" ] ; then
+    if ! [[ "$2" =~ ^[0-9]+$ ]] ; then
+        exec >&2; echo "Error: Throttle speed is not a number"; exit 1
+    fi
+    THROTTLE=$2
+fi
+
+# check if #3 arg is either 'any' or a port number
+if [ "$3" ] ; then
+    if [ "$3" != "any" ] ; then
+        if ! [[ "$3" =~ ^[0-9]+$ ]] ; then
+            exec >&2; echo "Error: PORT is not a number"; exit 1
+        fi
+    fi
+    PORT=$3
+fi
+
+case "$1" in
+    start)
+        start
+        ;;
+     
+    stop)
+        stop
+        ;;
+     
+    status)
+        status
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status} <speed in KB> <port number>"
+        exit 1
+esac
