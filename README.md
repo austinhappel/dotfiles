@@ -3,7 +3,7 @@
 
 ## zsh
 
-* Add the following to your .zshrc:
+* Add the following to your .zshenv:
 
         source ~/dotfiles/setup-zsh.sh;
 
