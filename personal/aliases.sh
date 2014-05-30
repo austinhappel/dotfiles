@@ -15,3 +15,9 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 
 alias svnrmall='svn status | grep "^\!" | sed "s/! *//" | xargs -I% svn rm %'
 alias svnaddall='svn --force --depth infinity add .'
+
+alias rename='~/dotfiles/personal/tools/rename';
+
+# couchdb dump/restore
+alias couchdb-dump='~/dotfiles/personal/tools/couchdb-dump/bin/couchdb-dump.sh';
+alias couchdb-restore='~/dotfiles/personal/tools/couchdb-dump/bin/couchdb-restore.sh';

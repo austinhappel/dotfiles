@@ -7,3 +7,6 @@
 [submodule "personal/tools/pyenv"]
 	path = personal/tools/pyenv
 	url = git://github.com/yyuu/pyenv.git
+[submodule "personal/tools/couchdb-dump"]
+	path = personal/tools/couchdb-dump
+	url = https://github.com/danielebailo/couchdb-dump.git
