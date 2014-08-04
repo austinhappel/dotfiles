@@ -20,9 +20,6 @@ source ${DOTFILES_DIR}/personal/tools/nvm/nvm.sh
 # (sudo pip install virtualenvwrapper)
 # source /usr/local/bin/virtualenvwrapper.sh
 
-# ruby: rvm
-source ~/.rvm/scripts/rvm
-
 # todo
 source ${DOTFILES_DIR}/personal/tools/todo/todo_completion
 export TODOTXT_CFG_FILE="${DOTFILES_DIR}/personal/tools/todo/todo.cfg"
@@ -33,3 +30,6 @@ alias t='todo'
 export PYENV_ROOT="${DOTFILES_DIR}/personal/tools/pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# ruby: rvm
+source ~/.rvm/scripts/rvm
