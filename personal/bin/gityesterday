@@ -1,2 +1,2 @@
 #! /bin/bash
-git log --all  --pretty=format:"%h - %an, %ad : %s" --author="`git config user.name`" --since="`date -v -1d "+%Y-%m-%d 00:00:00"`" --until="`date -v -1d "+%Y-%m-%d 23:23:59"`"--date=short
+git log --all --pretty=format:"%h - %an, %cd : %s" --author="`git config user.name`" --since="`date -v -1d "+%Y-%m-%d 00:00:00"`" --until="`date -v -1d "+%Y-%m-%d 23:23:59"`" --date=local
