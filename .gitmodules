@@ -1,6 +1,3 @@
 [submodule "personal/zsh/tools/zsh-git-prompt"]
 	path = personal/zsh/tools/zsh-git-prompt
 	url = git@github.com:austinhappel/zsh-git-prompt.git
-[submodule "personal/tools/pyenv"]
-	path = personal/tools/pyenv
-	url = git://github.com/yyuu/pyenv.git
