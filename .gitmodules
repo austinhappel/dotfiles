@@ -1,12 +1,6 @@
 [submodule "personal/zsh/tools/zsh-git-prompt"]
 	path = personal/zsh/tools/zsh-git-prompt
 	url = git@github.com:austinhappel/zsh-git-prompt.git
-[submodule "personal/tools/nvm"]
-	path = personal/tools/nvm
-	url = git://github.com/creationix/nvm.git
 [submodule "personal/tools/pyenv"]
 	path = personal/tools/pyenv
 	url = git://github.com/yyuu/pyenv.git
-[submodule "personal/tools/couchdb-dump"]
-	path = personal/tools/couchdb-dump
-	url = https://github.com/danielebailo/couchdb-dump.git

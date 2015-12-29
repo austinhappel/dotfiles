@@ -1,2 +1,0 @@
-#!/bin/bash
-ssh -q austin@sencha.austinhappel.com
