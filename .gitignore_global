@@ -1,0 +1,3 @@
+# to use this: git config --global core.excludesfile ~/dotfiles/.gitignore_global
+*.swp
+*.rbenv-gemset
