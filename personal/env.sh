@@ -23,5 +23,3 @@ export TODOTXT_CFG_FILE="${DOTFILES_DIR}/personal/tools/todo/todo.cfg"
 alias todo="${DOTFILES_DIR}/personal/tools/todo/todo.sh"
 alias t='todo'
 
-# ruby: rvm
-source ~/.rvm/scripts/rvm
