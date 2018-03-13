@@ -24,13 +24,14 @@
 
 ## both
 
-* soft-link or copy over the `.npmrc` to your home directory
+* soft-link some files to the home directory
 
         ln -s ~/dotfiles/.npmrc ~/.npmrc
+        ln -s ~/dotfiles/.slate ~/.slate
 
 * Install some dependencies:
 
-        % git submodule init 
+        % git submodule init
         % git submodule update --recursive
 
 ## Other bootstrap things to do:
@@ -40,7 +41,7 @@ Install [rvm](rvm.io)
 	\curl -sSL https://get.rvm.io | bash
 
 	// Install RVM stable with ruby:
-	
+
 	\curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 
