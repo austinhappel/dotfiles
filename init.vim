@@ -1,12 +1,16 @@
-" install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+" nvim configuration file.
+" This file goes in ~/.config/nvim/
+
+" Instal vim-plug for neovim
+if empty(glob('~/.nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs 
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
 " plugins
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file browser
 Plug 'dracula/vim', { 'as': 'dracula' } " dracula theme
 Plug 'plasticboy/vim-markdown' " Markdown syntax highlighting
@@ -16,10 +20,15 @@ Plug 'tpope/vim-surround' " Useful commands to surround words in quotes
 Plug 'airblade/vim-gitgutter' " Show git changes in vim
 Plug 'tpope/vim-fugitive' " Useful git commands
 Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " typscript autocomplete
 Plug 'junegunn/fzf' " file finder
 Plug 'tpope/vim-unimpaired' " useful key mappings
 Plug 'junegunn/fzf.vim' " file finder
 Plug 'vim-syntastic/syntastic' " syntax linting
+Plug 'vim-airline/vim-airline' " fancy status bar
+
+" install neovim-compatible plugins I need.
+Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
 call plug#end()
 
 " syntax highlighting
@@ -68,6 +77,9 @@ set number
 " vim-markdown folding
 let g:vim_markdown_folding_disabled = 1
 
+" vim-airline settings
+let g:airline#extensions#tabline#enabled = 1 " show buffers as tabs at top, if not using tabs.
+
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
@@ -92,3 +104,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 " hide search results after finishing a search
 noremap <CR> :nohlsearch<cr>
+
+
+
+
