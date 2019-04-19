@@ -1,3 +1,0 @@
-#!/bin/bash
-
-git diff --name-only development | while read line; do atom $line; done;
