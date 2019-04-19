@@ -13,3 +13,7 @@ source ~/dotfiles/personal/env.sh
 source ~/dotfiles/personal/aliases.sh
 source ~/dotfiles/personal/bash/env.sh
 source ~/dotfiles/personal/bash/aliases.sh
+
+# Set up vim and nvim
+ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/.vimrc ~/.vimrc

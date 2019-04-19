@@ -26,6 +26,7 @@ Plug 'tpope/vim-unimpaired' " useful key mappings
 Plug 'junegunn/fzf.vim' " file finder
 Plug 'vim-syntastic/syntastic' " syntax linting
 Plug 'vim-airline/vim-airline' " fancy status bar
+Plug 'tpope/vim-repeat' " better plugin integraion for . repeat
 
 " install neovim-compatible plugins I need.
 Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
@@ -44,13 +45,14 @@ filetype plugin on
 " tabs
 filetype plugin indent on
 
-" show existing tab with 4 spaces width
+" show existing tab with 2 spaces width
 set tabstop=2
+set softtabstop=2
 
-"  when indenting with '>', use 4 spaces width
+"  when indenting with '>', use 2 spaces width
 set shiftwidth=2
 
-" On pressing tab, insert 4 spaces
+" On pressing tab, insert 2 spaces
 set expandtab
 
 " Highlight search

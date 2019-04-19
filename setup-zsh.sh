@@ -22,3 +22,6 @@ source ~/dotfiles/personal/aliases.sh
 source ~/dotfiles/personal/zsh/env.sh
 source ~/dotfiles/personal/zsh/aliases.sh
 
+# Set up nvim
+ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/.vimrc ~/.vimrc
