@@ -28,6 +28,8 @@
 
         ln -s ~/dotfiles/.npmrc ~/.npmrc
         ln -s ~/dotfiles/.slate ~/.slate
+        ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+        ln -s ~/dotfiles/.vimrc ~/.vimrc
 
 * Install some dependencies:
 
