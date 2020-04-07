@@ -1,58 +1,83 @@
 # A few installation notes:
 
+## OSX: Install Homebrew first
+
+- Install [Homebrew](https://brew.sh/) using the info from their website.
+- Inspect the `Brewfile` to see if it contains everything you want to install. It's found in `~/dotfiles/Brewfile`
+
+Install all brew dependencies with this:
+
+```
+cd ~/dotfiles
+brew bundle
+```
 
 ## zsh
 
-* Add the following to your .zshrc:
+- Install [Oh my ZSH!](https://ohmyz.sh/) - this will create a .zshrc file for you.
+- Add the following to your .zshrc:
 
-        source ~/dotfiles/setup-zsh.sh;
+```
+source ~/dotfiles/setup-zsh.sh;
+```
 
-* If you're on osx, also add this :
+- If you're on osx, also add this :
 
-        source ~/dotfiles/personal/osx.sh;
-
+```
+source ~/dotfiles/personal/osx.sh;
+```
 
 ## bash
 
-* Add the following to your .bashrc:
+- Add the following to your .bashrc:
 
-    source ~/dotfiles/setup-bash.sh;
+```
+source ~/dotfiles/setup-bash.sh;
+```
 
-* If you're on osx, also add this :
-
-    source ~/dotfiles/personal/osx.sh;
+- If you're on osx, also add this :
+```
+source ~/dotfiles/personal/osx.sh;
+```
 
 ## both
 
-* soft-link some files to the home directory
+Copy dot files to the home directory
 
-        ln -s ~/dotfiles/.npmrc ~/.npmrc
-        ln -s ~/dotfiles/.slate ~/.slate
-        ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
-        ln -s ~/dotfiles/.vimrc ~/.vimrc
+```
+cp ~/dotfiles/.npmrc ~/.npmrc
+cp ~/dotfiles/init.vim ~/.config/nvim/init.vim
+cp ~/dotfiles/.vimrc ~/.vimrc
+cp ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-* Install some dependencies:
+# OSX
+cp ~/dotfiles/.slate ~/.slate
+cp -r ~/dotfiles/.iterm ~/.iterm
+```
 
-        % git submodule init
-        % git submodule update --recursive
+## Other bootstrap things to do
 
-## Other bootstrap things to do:
+#### Install [rvm](rvm.io)
 
-Install [rvm](rvm.io)
+```
+\curl -sSL https://get.rvm.io | bash
+```
 
-	\curl -sSL https://get.rvm.io | bash
+#### Install [NVM](https://github.com/nvm-sh/nvm)
 
-	// Install RVM stable with ruby:
-
-	\curl -sSL https://get.rvm.io | bash -s stable --ruby
+Follow the notes on their github page (link above)
 
 
 ## other notes:
 
 ### set zsh as default shell:
 
-    chsh -s /bin/zsh
+```
+chsh -s /bin/zsh
+```
 
 ### set bash as default shell:
 
-    chsh -s /bin/bash
+```
+chsh -s /bin/bash
+```
