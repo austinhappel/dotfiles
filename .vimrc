@@ -20,6 +20,10 @@ Plug 'junegunn/fzf' " file finder
 Plug 'tpope/vim-unimpaired' " useful key mappings
 Plug 'junegunn/fzf.vim' " file finder
 Plug 'vim-syntastic/syntastic' " syntax linting
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'pangloss/vim-javascript' " better Javascript syntax highlighting
 call plug#end()
 
 " syntax highlighting
