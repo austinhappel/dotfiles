@@ -8,7 +8,6 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 " plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file browser
@@ -27,9 +26,10 @@ Plug 'junegunn/fzf.vim' " file finder
 Plug 'vim-syntastic/syntastic' " syntax linting
 Plug 'vim-airline/vim-airline' " fancy status bar
 Plug 'tpope/vim-repeat' " better plugin integraion for . repeat
-
-" install neovim-compatible plugins I need.
-Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'pangloss/vim-javascript' " better Javascript syntax highlighting
 call plug#end()
 
 " syntax highlighting
