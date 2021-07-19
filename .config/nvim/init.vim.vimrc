@@ -1,11 +1,4 @@
-" Install vim-plug for neovim
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs 
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
- " Install vim-plug for neovim
+" install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -22,35 +15,18 @@ Plug 'scrooloose/nerdcommenter' " Useful shortcuts for commenting code
 Plug 'tpope/vim-surround' " Useful commands to surround words in quotes
 Plug 'airblade/vim-gitgutter' " Show git changes in vim
 Plug 'tpope/vim-fugitive' " Useful git commands
+Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " typscript autocomplete
 Plug 'junegunn/fzf' " file finder
 Plug 'tpope/vim-unimpaired' " useful key mappings
 Plug 'junegunn/fzf.vim' " file finder
 Plug 'vim-syntastic/syntastic' " syntax linting
 Plug 'vim-airline/vim-airline' " fancy status bar
 Plug 'tpope/vim-repeat' " better plugin integraion for . repeat
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'pangloss/vim-javascript' " better Javascript syntax highlighting
-"
-" typescript plugins  -----
+
+" install neovim-compatible plugins I need.
 Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " typscript autocomplete
-" For async completion
-Plug 'Shougo/deoplete.nvim'
-" For Denite features
-if has('nvim')
- Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'dense-analysis/ale' " linting in background
-" -----
-
 call plug#end()
-
 
 " syntax highlighting
 syntax on
@@ -65,14 +41,13 @@ filetype plugin on
 " tabs
 filetype plugin indent on
 
-" show existing tab with 2 spaces width
+" show existing tab with 4 spaces width
 set tabstop=2
-set softtabstop=2
 
-"  when indenting with '>', use 2 spaces width
+"  when indenting with '>', use 4 spaces width
 set shiftwidth=2
 
-" On pressing tab, insert 2 spaces
+" On pressing tab, insert 4 spaces
 set expandtab
 
 " Highlight search
@@ -99,9 +74,6 @@ set number
 " vim-markdown folding
 let g:vim_markdown_folding_disabled = 1
 
-" vim-airline settings
-let g:airline#extensions#tabline#enabled = 1 " show buffers as tabs at top, if not using tabs.
-
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
@@ -126,8 +98,3 @@ map <C-n> :NERDTreeToggle<CR>
 
 " hide search results after finishing a search
 noremap <CR> :nohlsearch<cr>
-
-" Support fast project search with Ag. Use :Ag in console.
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-

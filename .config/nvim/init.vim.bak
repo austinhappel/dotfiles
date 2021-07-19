@@ -1,13 +1,9 @@
-" Install vim-plug for neovim
+" nvim configuration file.
+" This file goes in ~/.config/nvim/
+
+" Instal vim-plug for neovim
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs 
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
- " Install vim-plug for neovim
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
@@ -22,6 +18,8 @@ Plug 'scrooloose/nerdcommenter' " Useful shortcuts for commenting code
 Plug 'tpope/vim-surround' " Useful commands to surround words in quotes
 Plug 'airblade/vim-gitgutter' " Show git changes in vim
 Plug 'tpope/vim-fugitive' " Useful git commands
+Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " typscript autocomplete
 Plug 'junegunn/fzf' " file finder
 Plug 'tpope/vim-unimpaired' " useful key mappings
 Plug 'junegunn/fzf.vim' " file finder
@@ -32,25 +30,7 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'pangloss/vim-javascript' " better Javascript syntax highlighting
-"
-" typescript plugins  -----
-Plug 'HerringtonDarkholme/yats.vim' " typescript syntax highlighting
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'} " typscript autocomplete
-" For async completion
-Plug 'Shougo/deoplete.nvim'
-" For Denite features
-if has('nvim')
- Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'dense-analysis/ale' " linting in background
-" -----
-
 call plug#end()
-
 
 " syntax highlighting
 syntax on
@@ -127,7 +107,6 @@ map <C-n> :NERDTreeToggle<CR>
 " hide search results after finishing a search
 noremap <CR> :nohlsearch<cr>
 
-" Support fast project search with Ag. Use :Ag in console.
-let g:ackprg = 'ag --nogroup --nocolor --column'
+
 
 
