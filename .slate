@@ -2,12 +2,14 @@ bind f4:cmd grid padding:2 0:10,6 1:10,6
 
 # push to right, full height, half width
 bind right:alt push right bar-resize:screenSizeX/2
+bind right:alt,shift chain push right bar-resize:screenSizeX/3 | push left bar-resize:screenSizeX/3 | nudge +33% +0
 
 # push to left, full height, half width
 bind left:alt push left bar-resize:screenSizeX/2
+bind left:alt,shift chain push left bar-resize:screenSizeX/3 | push right bar-resize:screenSizeX/3 | nudge -33% +0
 
 # push to top, full width/height.
 bind up:alt push up bar-resize:screenSizeY
 
 # (used with push commands) shrink height from top by 10%
-bind down:alt  resize +0 -10% bottom-right
+bind down:alt resize +0 -10% bottom-right
