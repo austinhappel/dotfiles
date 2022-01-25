@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+curl "https://wttr.in";
+
+printf "Open a satellite image of the west coast? (Y/n): "
+read openImage
+
+if [ "$openImage" != "n" ]; then
+  open 'https://cdn.star.nesdis.noaa.gov//GOES17/ABI/SECTOR/WUS/GEOCOLOR/GOES17-WUS-GEOCOLOR-1000x1000.gif';
+fi
