@@ -2,6 +2,7 @@
 
 curl "https://wttr.in";
 
+# photos can be found here: https://www.nhc.noaa.gov/satellite.php
 printf "Open a satellite image of the west coast? (Y/n): "
 read openImage
 
