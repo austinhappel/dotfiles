@@ -1,0 +1,25 @@
+#!/bin/bash
+
+branchList=$(</dev/stdin);
+formattedDate=$(date +%Y%m%d)
+
+printf "You want to rename these branches:\n\n";
+
+while read -r branch
+do
+    printf "%s -> z_archive/%s/%s\n" "$branch" "$formattedDate" "$branch"
+done < <(echo "$branchList")
+
+echo ''
+
+read -rp "Are you sure? (y/N): " commit </dev/tty
+
+if [[ "$commit" = "y" ]] 
+then
+  printf "\nCommitting branch changes...\n"
+  while read -r branch
+  do
+    git branch -m "$branch" z_archive/"$formattedDate/$branch"
+  done < <(echo "$branchList")
+fi
+
