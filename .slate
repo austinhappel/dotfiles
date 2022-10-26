@@ -13,3 +13,12 @@ bind up:alt push up bar-resize:screenSizeY
 
 # (used with push commands) shrink height from top by 10%
 bind down:alt resize +0 -10% bottom-right
+
+# throw window to screen 1
+bind 1:alt throw 0 resize
+
+# throw window to screen 2
+bind 2:alt throw 1 resize
+
+# throw window to screen 3
+bind 3:alt throw 2 resize
