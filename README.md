@@ -67,6 +67,12 @@ cp -r ~/dotfiles/.iterm ~/.iterm
 
 Follow the notes on their github page (link above)
 
+#### Make cmd-tab switcher display on all screens
+
+```
+defaults write com.apple.Dock appswitcher-all-displays -bool true
+killall Dock
+```
 
 ## other notes:
 
