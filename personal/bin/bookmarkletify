@@ -1,0 +1,57 @@
+#!/bin/bash
+# vim ft=sh
+
+usage() {
+cat << EOF
+
+Usage: bookmarkletify <FILE>
+
+  Convert JavaScript files to bookmarklets
+
+Example:
+  $ bookmarkletify script.js
+
+Via stdin:
+  $ cat script.js | bookmarkletify
+
+Options:
+  -h --help                Display software usage
+EOF
+}
+
+if [[ $@ == "-h" || $@ == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+has_node=`which node`
+
+bookmarkletify() {
+  local script=$1
+
+  if [ -z $has_node ]; then
+    echo -e "Haven't found Node.js binary\n\n  $ brew install node"
+    exit 1
+  fi
+
+  if [ -t 0 ]; then
+    if [ -z $@  ]; then
+      usage
+      exit
+    fi
+
+    local minified=`npx uglify-js $script`
+  else
+    local minified=`npx uglify-js`
+  fi
+
+  # For some reason scripts with `\n` don't work using `encodeURIComponent` - the `\n` gets encoded
+  # and Chrome at least throws an error when the script is run. Re-converting it back to `\n` fixes
+  # this issue.
+  local encoded=`node -p "let encoded = encodeURIComponent('$minified'); encoded.replaceAll('%0A', '\n');"`
+  local bookmarklet="javascript:(function(){$encoded})()"
+
+  echo -n $bookmarklet
+}
+
+bookmarkletify $@

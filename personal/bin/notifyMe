@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+  set "ready"
+fi
+
+osascript -e "display notification \"$2\" with title \"$1\""
+say "$1 $2"
