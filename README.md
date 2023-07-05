@@ -57,11 +57,10 @@ cp -r ~/dotfiles/.iterm ~/.iterm
 
 ## Other bootstrap things to do
 
-#### Install [rvm](rvm.io)
+#### Install tmux package manager
 
-```
-\curl -sSL https://get.rvm.io | bash
-```
+https://github.com/tmux-plugins/tpm
+
 
 #### Install [NVM](https://github.com/nvm-sh/nvm)
 
